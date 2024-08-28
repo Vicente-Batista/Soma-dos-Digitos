@@ -1,0 +1,53 @@
+package AtividadesSemestre2.olimpiadaProgramação;
+import java.util.Scanner;
+
+public class Exercicio03 {
+    public static void main(String[]args){
+        Scanner ler = new Scanner(System.in);
+        
+        int s,a,b;
+        int contagem = 0;
+
+        System.out.println("Digite o valor de S: ");
+        s = ler.nextInt();
+        System.out.println("Digite o valor de A: ");
+        a = ler.nextInt();
+        System.out.println("Digite o valor de B: ");
+        b = ler.nextInt();
+
+        if(a < b){
+        for(int i = a; i <= b; i++){
+            String numero = String.valueOf(i);
+            char [] digitos = numero.toCharArray();
+
+            int soma = 0;
+
+            for(char digito : digitos){
+                soma += Character.getNumericValue(digito);
+            }
+            if (s == soma){
+                contagem++;
+            }
+        }
+            System.out.println("Existem "+contagem+" numeros cujo a soma dos digitos de "+a+ " a " +b+" é igual a "+s);
+    } 
+        else{
+        for(int i = b; i <= a; i++){
+            String numero = String.valueOf(i);
+            char [] digitos = numero.toCharArray();
+
+            int soma = 0;
+
+            for(char digito : digitos){
+                soma += Character.getNumericValue(digito);
+            }
+            if (s == soma){
+                contagem++;
+            }
+        }
+        System.out.println("Existem "+contagem+" numeros cujo a soma dos digitos de "+b+ " a " +a+" é igual a "+s);
+        System.out.println();
+    }
+    }
+}
+
